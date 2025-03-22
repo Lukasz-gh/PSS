@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2025-03-20 22:51:12
+/* Smarty version 4.3.4, created on 2025-03-22 12:08:01
   from 'C:\xampp\htdocs\03_stronnicowanie\app\views\FluidList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_67dc8dd0d674b7_00448765',
+  'unifunc' => 'content_67de9a118d5538_65361977',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '544fa67c9eb73e55d88205b40264a0c0988d5d55' => 
     array (
       0 => 'C:\\xampp\\htdocs\\03_stronnicowanie\\app\\views\\FluidList.tpl',
-      1 => 1742507470,
+      1 => 1742641678,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67dc8dd0d674b7_00448765 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67de9a118d5538_65361977 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_811606367dc8dd0d41fc3_53516245', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_49511504767de9a118aaca0_76707277', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "Main.tpl");
 }
 /* {block 'content'} */
-class Block_811606367dc8dd0d41fc3_53516245 extends Smarty_Internal_Block
+class Block_49511504767de9a118aaca0_76707277 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_811606367dc8dd0d41fc3_53516245',
+    0 => 'Block_49511504767de9a118aaca0_76707277',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -57,7 +57,7 @@ fluidNew">
 
     <div class="bottom-margin">
     <form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-fluidSearch">
+fluidList">
         <legend>Wyszukiwanie płynu</legend>
         <div class="row">
             <div class="col-3">
@@ -112,22 +112,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <div class="bottom-margin">
 
         <th>
-            <?php if ($_smarty_tpl->tpl_vars['pages']->value == 1) {?>
+            <?php if ($_smarty_tpl->tpl_vars['page']->value <= 1) {?>
                 <?php $_smarty_tpl->_assignInScope('disabled', "disabled");?>
             <?php } else { ?>
                 <?php $_smarty_tpl->_assignInScope('disabled', '');?>
             <?php }?>
-
-            <?php if ($_smarty_tpl->tpl_vars['searchForm']->value->fluidSearch == NULL) {?>
-                <a class="button-small pure-button button-secondary" <?php echo $_smarty_tpl->tpl_vars['disabled']->value;?>
+            <a class="button-small pure-button button-secondary" <?php echo $_smarty_tpl->tpl_vars['disabled']->value;?>
  name="page" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-fluidListPa?page=1">Pierwsza strona</a>
-            <?php } else { ?>
-                <a class="button-small pure-button button-secondary" <?php echo $_smarty_tpl->tpl_vars['disabled']->value;?>
- name="page" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-fluidSearchPa?fluidSearch=<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->fluidSearch;?>
+fluidList?fluidSearch=<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->fluidSearch;?>
 &page=1">Pierwsza strona</a>
-            <?php }?>
             &nbsp;
         </th>
 
@@ -137,18 +130,11 @@ fluidSearchPa?fluidSearch=<?php echo $_smarty_tpl->tpl_vars['searchForm']->value
             <?php } else { ?>
                 <?php $_smarty_tpl->_assignInScope('disabled', '');?>
             <?php }?>
-            <?php if ($_smarty_tpl->tpl_vars['searchForm']->value->fluidSearch == NULL) {?>
-                <a class="button-small pure-button button-secondary" <?php echo $_smarty_tpl->tpl_vars['disabled']->value;?>
+            <a class="button-small pure-button button-secondary" <?php echo $_smarty_tpl->tpl_vars['disabled']->value;?>
  name="page" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-fluidListPa?page=<?php echo $_smarty_tpl->tpl_vars['page']->value-1;?>
-">-1 Strona</a>
-            <?php } else { ?>
-                 <a class="button-small pure-button button-secondary" <?php echo $_smarty_tpl->tpl_vars['disabled']->value;?>
- name="page" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-fluidSearchPa?fluidSearch=<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->fluidSearch;?>
+fluidList?fluidSearch=<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->fluidSearch;?>
 &page=<?php echo $_smarty_tpl->tpl_vars['page']->value-1;?>
 ">-1 Strona</a>
-            <?php }?>
             &nbsp;
         </th>
 
@@ -165,40 +151,25 @@ fluidSearchPa?fluidSearch=<?php echo $_smarty_tpl->tpl_vars['searchForm']->value
             <?php } else { ?>
                 <?php $_smarty_tpl->_assignInScope('disabled', '');?>
             <?php }?>
-            <?php if ($_smarty_tpl->tpl_vars['searchForm']->value->fluidSearch == NULL) {?>
-                <a class="button-small pure-button button-secondary" <?php echo $_smarty_tpl->tpl_vars['disabled']->value;?>
+            <a class="button-small pure-button button-secondary" <?php echo $_smarty_tpl->tpl_vars['disabled']->value;?>
  name="page" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-fluidListPa?page=<?php echo $_smarty_tpl->tpl_vars['page']->value+1;?>
-">+1 Strona</a>
-            <?php } else { ?>
-                <a class="button-small pure-button button-secondary" <?php echo $_smarty_tpl->tpl_vars['disabled']->value;?>
- name="page" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-fluidSearchPa?fluidSearch=<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->fluidSearch;?>
+fluidList?fluidSearch=<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->fluidSearch;?>
 &page=<?php echo $_smarty_tpl->tpl_vars['page']->value+1;?>
 ">+1 Strona</a>
-            <?php }?>
             &nbsp;
         </th>
 
         <th>
-            <?php if ($_smarty_tpl->tpl_vars['pages']->value == 1) {?>
+            <?php if ($_smarty_tpl->tpl_vars['page']->value == $_smarty_tpl->tpl_vars['pages']->value) {?>
                 <?php $_smarty_tpl->_assignInScope('disabled', "disabled");?>
             <?php } else { ?>
                 <?php $_smarty_tpl->_assignInScope('disabled', '');?>
             <?php }?>
-
-            <?php if ($_smarty_tpl->tpl_vars['searchForm']->value->fluidSearch == NULL) {?>
-                <a class="button-small pure-button button-secondary" <?php echo $_smarty_tpl->tpl_vars['disabled']->value;?>
+            <a class="button-small pure-button button-secondary" <?php echo $_smarty_tpl->tpl_vars['disabled']->value;?>
  name="page" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-fluidListPa?page=<?php echo $_smarty_tpl->tpl_vars['pages']->value;?>
-">Ostatnia strona</a>
-            <?php } else { ?>
-                    <a class="button-small pure-button button-secondary" <?php echo $_smarty_tpl->tpl_vars['disabled']->value;?>
- name="page" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-fluidSearchPa?fluidSearch=<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->fluidSearch;?>
+fluidList?fluidSearch=<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->fluidSearch;?>
 &page=<?php echo $_smarty_tpl->tpl_vars['pages']->value;?>
-">Pierwsza strona</a>
-            <?php }?>
+">Ostatnia strona</a>
             &nbsp;
         </th>
 

@@ -16,7 +16,7 @@
 				{if \core\RoleUtils::inRole("admin")}
 					<li><a href="{$conf->action_root}userList">Użytkownicy</a></li>
 				{/if}
-				<li><a href="{$conf->action_root}fluidListPa?page=1">Płyny</a></li>
+				<li><a href="{$conf->action_root}fluidList">Płyny</a></li>
 				<li><a href="{$conf->action_root}calc">Wyniki</a></li>
 				{if \core\RoleUtils::inRole("projectManager") OR \core\RoleUtils::inRole("admin")}
 				{else}

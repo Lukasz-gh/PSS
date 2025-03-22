@@ -14,7 +14,7 @@
     {/if}
 
     <div class="bottom-margin">
-    <form class="pure-form pure-form-stacked" action="{$conf->action_url}fluidSearch">
+    <form class="pure-form pure-form-stacked" action="{$conf->action_url}fluidList">
         <legend>Wyszukiwanie płynu</legend>
         <div class="row">
             <div class="col-3">
@@ -69,17 +69,12 @@
     <div class="bottom-margin">
 
         <th>
-            {if $pages == 1}
+            {if $page <= 1}
                 {$disabled = "disabled"}
             {else}
                 {$disabled = ""}
             {/if}
-
-            {if $searchForm->fluidSearch == NULL}
-                <a class="button-small pure-button button-secondary" {$disabled} name="page" href="{$conf->action_url}fluidListPa?page=1">Pierwsza strona</a>
-            {else}
-                <a class="button-small pure-button button-secondary" {$disabled} name="page" href="{$conf->action_url}fluidSearchPa?fluidSearch={$searchForm->fluidSearch}&page=1">Pierwsza strona</a>
-            {/if}
+            <a class="button-small pure-button button-secondary" {$disabled} name="page" href="{$conf->action_url}fluidList?fluidSearch={$searchForm->fluidSearch}&page=1">Pierwsza strona</a>
             &nbsp;
         </th>
 
@@ -89,11 +84,7 @@
             {else}
                 {$disabled = ""}
             {/if}
-            {if $searchForm->fluidSearch == NULL}
-                <a class="button-small pure-button button-secondary" {$disabled} name="page" href="{$conf->action_url}fluidListPa?page={$page-1}">-1 Strona</a>
-            {else}
-                 <a class="button-small pure-button button-secondary" {$disabled} name="page" href="{$conf->action_url}fluidSearchPa?fluidSearch={$searchForm->fluidSearch}&page={$page-1}">-1 Strona</a>
-            {/if}
+            <a class="button-small pure-button button-secondary" {$disabled} name="page" href="{$conf->action_url}fluidList?fluidSearch={$searchForm->fluidSearch}&page={$page-1}">-1 Strona</a>
             &nbsp;
         </th>
 
@@ -108,26 +99,17 @@
             {else}
                 {$disabled = ""}
             {/if}
-            {if $searchForm->fluidSearch == NULL}
-                <a class="button-small pure-button button-secondary" {$disabled} name="page" href="{$conf->action_url}fluidListPa?page={$page+1}">+1 Strona</a>
-            {else}
-                <a class="button-small pure-button button-secondary" {$disabled} name="page" href="{$conf->action_url}fluidSearchPa?fluidSearch={$searchForm->fluidSearch}&page={$page+1}">+1 Strona</a>
-            {/if}
+            <a class="button-small pure-button button-secondary" {$disabled} name="page" href="{$conf->action_url}fluidList?fluidSearch={$searchForm->fluidSearch}&page={$page+1}">+1 Strona</a>
             &nbsp;
         </th>
 
         <th>
-            {if $pages == 1}
+            {if $page == $pages}
                 {$disabled = "disabled"}
             {else}
                 {$disabled = ""}
             {/if}
-
-            {if $searchForm->fluidSearch == NULL}
-                <a class="button-small pure-button button-secondary" {$disabled} name="page" href="{$conf->action_url}fluidListPa?page={$pages}">Ostatnia strona</a>
-            {else}
-                    <a class="button-small pure-button button-secondary" {$disabled} name="page" href="{$conf->action_url}fluidSearchPa?fluidSearch={$searchForm->fluidSearch}&page={$pages}">Pierwsza strona</a>
-            {/if}
+            <a class="button-small pure-button button-secondary" {$disabled} name="page" href="{$conf->action_url}fluidList?fluidSearch={$searchForm->fluidSearch}&page={$pages}">Ostatnia strona</a>
             &nbsp;
         </th>
 

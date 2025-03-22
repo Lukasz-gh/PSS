@@ -30,14 +30,10 @@ class FluidListCtrl {
         return !App::getMessages()->isError();
     }
 
-    public function action_fluidSearch() {
+    public function action_fluidList() {
         $this->validate();
-        $this->page = 1;
-        $this->searchValues();
-    }
-
-    public function action_fluidSearchPa(){
-        $this->validate();
+        if ($this->page == NULL)
+            $this->page = 1;
         $this->searchValues();
     }
 
@@ -78,48 +74,6 @@ class FluidListCtrl {
         }
         
         $this->generateView();
-    }
-
-    public function action_fluidList() {
-        $this->validate();
-        $this->page = 1;
-        $this->getValues();
-    }
-
-    public function action_fluidListPa() { 
-        $this->validate();
-        $this->getValues();
-    }
-
-    public function getValues() {
-        $offset = $this->pageSize * ($this->page - 1);
-
-        try {
-            $this->records = App::getDB()->select("fluids", [
-                "idfluids",
-                "fluid",
-                "cisOperacyjne",
-                "cisObliczeniowe",
-                "tempOperacyjna",
-                "tempObliczeniowa",
-            ],[
-			"LIMIT" => [$offset, $this->pageSize]
-			]
-        );
-
-        } catch (\PDOException $e) {
-            Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
-            if (App::getConf()->debug)
-                Utils::addErrorMessage($e->getMessage());
-        }
-
-        $this->getPages();
-        $this->generateView();
-    }
-
-    public function getPages() {
-        $this->pages = App::getDB()->count("fluids");
-        $this->pages = CEIL($this->pages / $this->pageSize);
     }
 
     public function generateView() {
