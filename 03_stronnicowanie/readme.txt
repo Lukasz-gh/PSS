@@ -1,4 +1,6 @@
 1. stronnicowanie zostało zaimplementowanie w widoku "Płyny"
+kontroler: 	FluidListCtrl.class.php
+widok:		FluidList.tpl
 
 2. można się zalogować jako dowolnym użytkownik np:
 login:  exp
